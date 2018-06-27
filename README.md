@@ -13,8 +13,8 @@ urllib (livedoorのWeather Hacksに接続)
 apscheduler (定期ツイートのためのスケジューラ)  
 datetime (現在時刻を取得)  
 os (ディレクトリの移動)  
-sys (エラーが出た時)  
-json (サイトから情報を取ってくる時)  
+sys (エラーが出た時処理を終了)  
+json (サイトから情報を取ってくる時使う)  
   
 ## ディレクトリ構造  
   

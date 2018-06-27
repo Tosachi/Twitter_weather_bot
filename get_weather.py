@@ -27,8 +27,8 @@ class GetWeather:
 
     # 表示する天気、最高気温、最低気温を格納する配列
     self.weather = '分からない'
-    self.min_temperature = '分からない'
-    self.max_temperature = '分からない'
+    self.min_temperature = ''
+    self.max_temperature = ''
 
     # 天気の絵文字を格納する辞書
     self.weather_emoji ={}
@@ -68,7 +68,7 @@ class GetWeather:
         self.bad_emoji = [line.replace("\n", "") for line in f.readlines()]
 
       # 朝のメッセージのファイル
-      with open("./texts/moning_msgs.txt", "r") as f:
+      with open("./texts/morning_msgs.txt", "r") as f:
         self.morning_msg = [line.replace("\n", "") for line in f.readlines()]
     
       # 夜のメッセージのファイル
@@ -76,6 +76,7 @@ class GetWeather:
         self.evening_msg = [line.replace("\n", "") for line in f.readlines()]
 
     except:
+      print("can't open file")
       sys.exit(1)
 
   ## 取得したツイートの解析
@@ -124,8 +125,7 @@ class GetWeather:
   ## ツイート内容を作る    
   def make_text(self):
 
-    self.weather_file()
-    self.emoji_file()
+    self.open_file()
     self.get_city_code()
     if self.city == {}:
       reply = "対応している都市名を入れてくれないと答えれないです" + random.choice(self.bad_emoji)

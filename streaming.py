@@ -18,7 +18,7 @@ class Listener(tweepy.StreamListener):
       if "@WeatherGirlBot" in tweet_text:
         if "天気" in tweet_text:
           weather = get_weather.GetWeather(tweet_text)
-          tweet = "@" + str(status.user.screen_name) + "\n" + weather.make_text()
+          tweet = "@" + str(status.user.screen_name) + "\n" + weather.make_text()        
 
         else:
           tweet = "@" + str(status.user.screen_name) + "\n" + "やっほー❗️お天気お姉さんです✨"
@@ -60,15 +60,12 @@ class Listener(tweepy.StreamListener):
 
 def tweet_streaming():
 
-  try:
-    auth = get_auth.auth()
-    global api
-    api = tweepy.API(auth)
-
-    listener = Listener(api)
-
-    stream = tweepy.Stream(auth, listener, secure=True)
-    stream.userstream(async=True)
   
-  except:
-    print("Streaming Error…")  
+  auth = get_auth.auth()
+  global api
+  api = tweepy.API(auth)
+
+  listener = Listener(api)
+
+  stream = tweepy.Stream(auth, listener, secure=True)
+  stream.userstream(async=True)
