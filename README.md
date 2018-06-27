@@ -4,6 +4,7 @@
 情報はlivedoorのWeather Hacksから。  
   
 ## 環境  
+MacBook Air  
 Python 3.6.4  
   
 ## 使用したライブラリ  
@@ -32,9 +33,9 @@ json (サイトから情報を取ってくる時使う)
 │                                      |  
 ├── get_weather.py  - - - - - -   <- - -  
 │                           |  |  
-├── run.py (実行ファイル) <- - -   |  
+├── run.py (実行ファイル) <- - -  |  
 │                              |  
-├── streaming.py  <- - -    <- -  
+├── streaming.py  <- - -   <- -  
 │                      |  
 ├── get_auth.py  - - - -   <- - -  
 │                               |  
