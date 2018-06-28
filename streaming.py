@@ -18,7 +18,7 @@ class Listener(tweepy.StreamListener):
       if "@WeatherGirlBot" in tweet_text:
         if "天気" in tweet_text:
           weather = get_weather.GetWeather(tweet_text)
-          tweet = "@" + str(status.user.screen_name) + "\n" + weather.make_text()        
+          tweet = "@" + str(status.user.screen_name) + "\n" + weather.make_tweet()        
 
         else:
           tweet = "@" + str(status.user.screen_name) + "\n" + "やっほー❗️お天気お姉さんです✨"

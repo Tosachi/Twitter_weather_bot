@@ -7,8 +7,7 @@ import get_auth
 # スケジューラー
 sched = BlockingScheduler()
 
-# UTCなのでJSTに変える
-@sched.scheduled_job("cron", hour="15,8")
+@sched.scheduled_job("cron", hour="6,23")
 def scheduled_job():
   weather = get_weather.GetWeather("")
   tweet = weather.regular_tweet()

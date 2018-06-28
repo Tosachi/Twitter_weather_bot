@@ -111,19 +111,19 @@ class GetWeather:
 
   def set_weather_info(self, weather_json, day):
     self.weather = '分からない'
-    self.max_temperature = '分からなくて、'
+    self.max_temperature = '分からなくて'
     self.min_temperature = '分からないです' + random.choice(self.bad_emoji)
 
     try:
       self.weather = weather_json['forecasts'][day]['telop']
-      self.max_temperature = str(weather_json['forecasts'][day]['temperature']['max']['celsius']) + "℃で、"
+      self.max_temperature = str(weather_json['forecasts'][day]['temperature']['max']['celsius']) + "℃で"
       self.min_temperature = str(weather_json['forecasts'][day]['temperature']['min']['celsius']) + "℃です" + random.choice(self.good_emoji)
     except TypeError:
       pass
 
 
   ## ツイート内容を作る    
-  def make_text(self):
+  def make_tweet(self):
 
     self.open_file()
     self.get_city_code()
@@ -152,7 +152,7 @@ class GetWeather:
         self.set_weather_info(weather_json, int(number))
 
         reply += "\n{0}の{1}の天気は{2}です{3}\n".format(name, a_day, self.weather,self.weather_emoji[self.weather])
-        reply += "最高気温は{0}最低気温は{1}\n".format(self.max_temperature, self.min_temperature)
+        reply += "最高気温は{0}、最低気温は{1}\n".format(self.max_temperature, self.min_temperature)
 
     return reply
 
@@ -165,16 +165,14 @@ class GetWeather:
     if dt.datetime.now().hour < 12:
       self.set_weather_info(weather_json, 0)
       reply = "\nおはようございます❗️\n朝のランダム天気予報です🌞\n"
-      day = "今日"
-      msg = self.morning_msg
+      reply += "{0}の今日の天気は{1}{2}で、\n".format(area,self.weather,self.weather_emoji[self.weather])
+      reply += "最高気温は{0}す{1}\n".format(self.max_temperature, random.choice(self.good_emoji))
+      reply += random.choice(self.morning_msg)
     else:
       self.set_weather_info(weather_json, 1)
       reply = "\nこんばんは🌟\n夜のランダム天気予報です🌝\n"
-      day = "明日"
-      msg = self.evening_msg
-
-    reply += "{0}の{1}の天気は{2}{3}で、\n".format(area,day,self.weather,self.weather_emoji[self.weather])
-    reply += "最高気温は{0}最低気温は{1}\n".format(self.max_temperature, self.min_temperature)
-    reply += random.choice(msg)
-
+      reply += "{0}の明日の天気は{1}{2}で、\n".format(area,day,self.weather,self.weather_emoji[self.weather])
+      reply += "最高気温は{0}、最低気温は{1}\n".format(self.max_temperature, self.min_temperature)
+      reply += random.choice(self.evening_msg)
+      
     return reply
