@@ -171,7 +171,7 @@ class GetWeather:
     else:
       self.set_weather_info(weather_json, 1)
       reply = "\nこんばんは🌟\n夜のランダム天気予報です🌝\n"
-      reply += "{0}の明日の天気は{1}{2}で、\n".format(area,day,self.weather,self.weather_emoji[self.weather])
+      reply += "{0}の明日の天気は{1}{2}で、\n".format(area,self.weather,self.weather_emoji[self.weather])
       reply += "最高気温は{0}、最低気温は{1}\n".format(self.max_temperature, self.min_temperature)
       reply += random.choice(self.evening_msg)
       
