@@ -57,14 +57,14 @@ json (サイトから情報を取ってくる時使う)
 ## ファイルの呼び出し関係
 (呼び出す側) <- - - (呼び出される側)  
 
-### リプライ時のファイル関係
+### リプライ時
 ```
 run.py <- - - streaming.py <- - - get_weather.py <- - - texts/
               streaming.py <- - - get_auth.py <- - - env.py
 
 ```
 
-### 定期ツイート時のファイル関係  
+### 定期ツイート時
 ```
 get_weather.py - - -> run.py (実行ファイル) <- - - get_auth.py <- - - env.py(ignore)  
 ```
@@ -91,7 +91,7 @@ Tweepyを用いてTwitterに接続し、UserStreamを使ってタイムライン
 
 ### get_weather.py
 テキストを開いて配列に格納したり、livedoorのWeather Hacksに接続して天気の情報を取得するファイル。実はこのファイルが一番重要。  
-下記に示す[条件分岐](#条件分岐)の3と4はこのファイルないで行われる。  
+下記に示す[条件分岐](#条件分岐)の3と4はこのファイル内で行われる。  
 
 ### get_auth.py
 Twitterに接続するために必要な情報を作成。env.pyから各種APIキーを読み込む。  

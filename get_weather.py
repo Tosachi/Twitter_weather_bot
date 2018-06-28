@@ -51,6 +51,8 @@ class GetWeather:
       
       # 辞書型に整形
       self.area_code = dict(areas)
+
+      return list(self.area_code.keys())
       
       # 天気の絵文字のファイル
       with open('./texts/weather_emoji.txt', 'r') as f:

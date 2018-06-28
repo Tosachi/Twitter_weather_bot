@@ -23,12 +23,12 @@ class Listener(tweepy.StreamListener):
         else:
           tweet = "@" + str(status.user.screen_name) + "\n" + "やっほー❗️お天気お姉さんです✨"
           tweet += "\nリプライで対応している都市名と知りたい日(今日か明日か明後日)の天気を聞かれたら答えます♪"
-          # tweet += "\n対応している都市名はこちら👇\n"
+          tweet += "\n対応している都市名はこちらのサイトを参考にしてください！👇\n"
 
+        if "対応" in tweet:
+          tweet += "http://www.nankuma.com/etc/livedoor-weather-id.html"
         try:
           api.update_status(tweet, status.id)  # ツイート！
-          # if "対応" in tweet:
-          #   api.update_with_media(filename='./texts/areas.png',status=text)
         except:
           print("Tweet Error…")
           

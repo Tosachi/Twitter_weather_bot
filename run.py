@@ -11,8 +11,10 @@ sched = BlockingScheduler()
 def scheduled_job():
   weather = get_weather.GetWeather("")
   tweet = weather.regular_tweet()
+  # Twitterに接続
   auth = get_auth.auth()
   api = tweepy.API(auth)
+  # ツイート
   api.update_status(tweet)
   
 if __name__ == "__main__":
