@@ -1,4 +1,4 @@
-# お天気お姉さんbot  
+# お天気お姉さんbot for Twitter  
   
 リプライで対応する地域の今日または明日または明後日の天気を尋ねると返信してくれるbot。  
 また、対応している都市をランダムに選んで朝6時に今日の、夜23時に明日の天気を呟く。  
@@ -23,7 +23,6 @@ random (絵文字を選ぶ)
 urllib (livedoorのWeather Hacksに接続)  
 apscheduler (定期ツイートのためのスケジューラ)  
 datetime (現在時刻を取得)  
-os (ディレクトリの移動)  
 sys (エラーが出た時処理を終了)  
 json (サイトから情報を取ってくる時使う)  
 dotenv (環境変数を設定する時使う)  
@@ -56,7 +55,9 @@ dotenv (環境変数を設定する時使う)
 │  
 ├── .gitignore  
 │  
-└──README.md  
+├── README.md  
+│  
+└──__pychache__ (ignore)
 ```
 
 ## ファイルの呼び出し関係

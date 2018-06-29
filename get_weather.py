@@ -1,6 +1,5 @@
 import json
 import sys
-import os
 import random
 import urllib.parse
 import urllib.request
