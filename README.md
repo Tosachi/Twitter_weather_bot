@@ -26,6 +26,7 @@ datetime (現在時刻を取得)
 os (ディレクトリの移動)  
 sys (エラーが出た時処理を終了)  
 json (サイトから情報を取ってくる時使う)  
+dotenv (環境変数を設定する時使う)  
   
 ## ディレクトリ構造  
 
@@ -47,7 +48,11 @@ json (サイトから情報を取ってくる時使う)
 │                
 ├── get_auth.py  
 │                         
-├── env.py(ignore) 
+├── api_setting.py
+│                         
+├── .env(ignore) 
+│                         
+├── .env.sample 
 │  
 ├── .gitignore  
 │  
@@ -60,13 +65,13 @@ json (サイトから情報を取ってくる時使う)
 ### リプライ時
 ```
 run.py <- - - streaming.py <- - - get_weather.py <- - - texts/
-              streaming.py <- - - get_auth.py <- - - env.py
+              streaming.py <- - - get_auth.py <- - - api_setting.py <- - - .env
 
 ```
 
 ### 定期ツイート時
 ```
-get_weather.py - - -> run.py (実行ファイル) <- - - get_auth.py <- - - env.py(ignore)  
+get_weather.py - - -> run.py (実行ファイル) <- - - api_setting.py <- - - .env
 ```
 
 ## それぞれのファイル・ディレクトリの説明

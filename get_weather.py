@@ -51,8 +51,6 @@ class GetWeather:
       
       # 辞書型に整形
       self.area_code = dict(areas)
-
-      return list(self.area_code.keys())
       
       # 天気の絵文字のファイル
       with open('./texts/weather_emoji.txt', 'r') as f:
@@ -98,7 +96,8 @@ class GetWeather:
     if self.day == {}:
       self.day["今日"] = "0"
 
-  ## 情報を取得する
+  ## 天気の情報を取得する
+  # サイトに接続する
   def get_weather_info(self, code):
     try:
       url = self.weather_url % code
@@ -111,6 +110,7 @@ class GetWeather:
       
     return html_json
 
+  # それぞれのデータを取得し、変数に格納する
   def set_weather_info(self, weather_json, day):
     self.weather = '分からない'
     self.max_temperature = '分からなくて'

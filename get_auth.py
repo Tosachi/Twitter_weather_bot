@@ -1,14 +1,16 @@
 import tweepy
-import env
+import api_setting
 
 def auth():
 
-  CK = env.CONSUMER_KEY()
-  CS = env.CONSUMER_SECRET()
-  AT = env.ACCESS_TOKEN()
-  AS = env.ACCESS_TOKEN_SECRET()
+  CK = api_setting.CONSUMER_KEY
+  CS = api_setting.CONSUMER_SECRET
+  AT = api_setting.ACCESS_TOKEN
+  AS = api_setting.ACCESS_TOKEN_SECRET
 
   auth = tweepy.OAuthHandler(CK, CS)
   auth.set_access_token(AT, AS)
 
   return auth
+
+
