@@ -72,19 +72,19 @@ run.py <- - - streaming.py <- - - get_weather.py <- - - texts/
 
 ### 定期ツイート時
 ```
-get_weather.py - - -> run.py (実行ファイル) <- - - api_setting.py <- - - .env
+get_weather.py - - -> run.py (実行ファイル) <- - - get_auth.py <- - - api_setting.py <- - - .env
 ```
 
 ## それぞれのファイル・ディレクトリの説明
 ### texts/
 必要なテキストを入れているファイル。get_weather.pyで呼び出して配列やディレクトリに格納する。  
 それぞれのファイルは次のようになっている。  
-・area_codes.txt・・・対応都市名と都市コード。  
-・weather_emoji.txt・・・天気とそれに対応する天気の絵文字。  
-・good_emoji.txt・・・語尾につける絵文字。  
-・bad_emoji.txt・・・申し訳ない時語尾につける絵文字。  
-・morning_msgs.txt・・・朝の定期ツイートの最後につけるメッセージ。　　
-・evening_msgs.txt・・・夜の定期ツイートの最後につけるメッセージ。  
+・area_codes.txt...対応都市名と都市コード。  
+・weather_emoji.txt...天気とそれに対応する天気の絵文字。  
+・good_emoji.txt...語尾につける絵文字。  
+・bad_emoji.txt...申し訳ない時語尾につける絵文字。  
+・morning_msgs.txt...朝の定期ツイートの最後につけるメッセージ。  
+・evening_msgs.txt...夜の定期ツイートの最後につけるメッセージ。  
 
 ### run.py
 実行ファイル。定期ツイートのためのスケジューラーを設定している。  
