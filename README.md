@@ -16,6 +16,7 @@ Python 3.6.4
 
 ## サーバー
 raspberry pi 3  
+herokuに移行(予定)  
   
 ## 使用したライブラリ  
 tweepy (Twiiterに接続)  
